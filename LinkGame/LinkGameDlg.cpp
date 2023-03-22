@@ -7,6 +7,9 @@
 #include "LinkGame.h"
 #include "LinkGameDlg.h"
 #include "afxdialogex.h"
+#include "CGameDlg.h"
+#include "CSettingDlg.h"
+#include "CEnjoyDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -65,6 +68,12 @@ BEGIN_MESSAGE_MAP(CLinkGameDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BTN_BASIC, &CLinkGameDlg::OnClickedBtnBasic)
+	ON_BN_CLICKED(IDC_BTN_HELP, &CLinkGameDlg::OnClickedBtnHelp)
+	ON_BN_CLICKED(IDC_BTN_SETTING, &CLinkGameDlg::OnBnClickedBtnSetting)
+	ON_BN_CLICKED(IDC_BTN_RELAX, &CLinkGameDlg::OnBnClickedBtnRelax)
+	ON_BN_CLICKED(IDC_BTN_LEVEL, &CLinkGameDlg::OnBnClickedBtnLevel)
+	ON_BN_CLICKED(IDC_BTN_RANK, &CLinkGameDlg::OnBnClickedBtnRank)
 END_MESSAGE_MAP()
 
 
@@ -100,6 +109,8 @@ BOOL CLinkGameDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
+	InitBackground();
+
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -142,6 +153,11 @@ void CLinkGameDlg::OnPaint()
 	}
 	else
 	{
+		//创建CPaintDC对象
+		CPaintDC dc(this);
+
+		dc.BitBlt(0, 0, 1300, 975, &m_dcMem, 0, 00, SRCCOPY);
+
 		CDialogEx::OnPaint();
 	}
 }
@@ -154,5 +170,66 @@ HCURSOR CLinkGameDlg::OnQueryDragIcon()
 }
 
 void CLinkGameDlg::InitBackground(void) {
+	//加载背景图
+	CBitmap  bmpMain;
+	bmpMain.LoadBitmap(IDB_MAIN_BG);
+
+	//创建兼容DC
+	CClientDC dc(this);
+	m_dcMem.CreateCompatibleDC(&dc);
+
+	//将位图选进DC
+	m_dcMem.SelectObject(&bmpMain);
+}
+
+void CLinkGameDlg::OnClickedBtnBasic()
+{
+	
+	// TODO: 在此添加控件通知处理程序代码
+	this->ShowWindow(SW_HIDE);
+	CGameDlg dlg;
+	dlg.DoModal();
+	this->ShowWindow(SW_SHOW);
+}
+
+
+void CLinkGameDlg::OnClickedBtnHelp()
+{
+	CAboutDlg dlg;
+	dlg.DoModal();
+	// TODO: 在此添加控件通知处理程序代码
+}
+
+
+void CLinkGameDlg::OnBnClickedBtnSetting()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	CSettingDlg dlg;
+	dlg.DoModal();
+	
+}
+
+
+void CLinkGameDlg::OnBnClickedBtnRelax()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	this->ShowWindow(SW_HIDE);
+	CEnjoyDlg dlg;
+	dlg.DoModal();
+	this->ShowWindow(SW_SHOW);
+}
+
+
+void CLinkGameDlg::OnBnClickedBtnLevel()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	MessageBox(_T("抱歉，此功能尚未开放，敬请期待"), (LPCTSTR)_T("！！！抱歉！！！"));
+}
+
+
+void CLinkGameDlg::OnBnClickedBtnRank()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	MessageBox(_T("抱歉，此功能尚未开放，敬请期待"), (LPCTSTR)_T("！！！抱歉！！！"));
 
 }

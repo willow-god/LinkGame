@@ -183,7 +183,15 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CEnjoyDlg.h" />
+    <ClInclude Include="CGameControl.h" />
+    <ClInclude Include="CGameDlg.h" />
+    <ClInclude Include="CGimeLogic.h" />
+    <ClInclude Include="CGraph.h" />
+    <ClInclude Include="CRankDlg.h" />
+    <ClInclude Include="CSettingDlg.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="global.h" />
     <ClInclude Include="LinkGame.h" />
     <ClInclude Include="LinkGameDlg.h" />
     <ClInclude Include="pch.h" />
@@ -191,6 +199,13 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CEnjoyDlg.cpp" />
+    <ClCompile Include="CGameControl.cpp" />
+    <ClCompile Include="CGameDlg.cpp" />
+    <ClCompile Include="CGimeLogic.cpp" />
+    <ClCompile Include="CGraph.cpp" />
+    <ClCompile Include="CRankDlg.cpp" />
+    <ClCompile Include="CSettingDlg.cpp" />
     <ClCompile Include="LinkGame.cpp" />
     <ClCompile Include="LinkGameDlg.cpp" />
     <ClCompile Include="pch.cpp">
@@ -209,6 +224,7 @@
   <ItemGroup>
     <Image Include="res\LinkGame.ico" />
     <Image Include="res\LinkGame_main.bmp" />
+    <Image Include="theme\picture\fruit_bg.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
