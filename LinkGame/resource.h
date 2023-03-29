@@ -1316,6 +1316,8 @@
 #define IDC_MFCPROPERTYGRID1            1033
 #define IDC_RANK_TABLE                  1033
 #define psh11                           0x040a
+#define IDC_EDIT_SOUND                  1034
+#define IDC_EDIT_VOLUME_SHOW            1034
 #define psh12                           0x040b
 #define psh13                           0x040c
 #define psh14                           0x040d
@@ -1650,7 +1652,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        143
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1034
+#define _APS_NEXT_CONTROL_VALUE         1035
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

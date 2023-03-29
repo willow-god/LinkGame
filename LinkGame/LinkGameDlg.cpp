@@ -15,6 +15,9 @@
 #define new DEBUG_NEW
 #endif
 
+BOOL isMusicOn;
+int ChoiceMusic;
+int ChoiceBGPic;
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
 
