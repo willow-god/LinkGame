@@ -349,7 +349,7 @@ void CGameDlg::DrawTipLine(Vertex* avPath, int nVexnum)
 
 void CGameDlg::OnTimer(UINT_PTR nIDEvent)
 {
-	if (nIDEvent == 1)
+	if (nIDEvent == 1&&!isPause)
 	{
 		m_ProgressBar.StepIt();
 		if (m_ProgressBar.GetPos() == 0)
